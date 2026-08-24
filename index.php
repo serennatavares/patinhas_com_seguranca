@@ -17,7 +17,48 @@ include("infra/conexao.php");
 
     <div>
 
-    <form action=public/cadastrar_clientes.php method="POST">
-    
+        <form action=public/cadastrar_clientes.php method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" required>
 
-</div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+
+            <button type=submit>Cadastrar</button>
+        </form>
+
+        <a href="public/listar_clientes.php">Listar Clientes</a>
+
+    </div>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+        </tr>
+
+    <?php
+
+        $sql = "SELECT * FROM clientes";
+
+        $clientes = $conn->query($sql);
+
+        while ($clientes = $clientes->fetch_assoc($clientes)) { ?>
+
+        ?>
+
+            <tr>
+                <td><?php echo $clientes['id']; ?></td>
+                <td><?php echo $clientes['nome']; ?></td>
+                <td><?php echo $clientes['email']; ?></td>
+                <td>
+                    <a href="public/cadastrar_animais.php?id=<?php echo $clientes['id']; ?>">Cadastrar Animal</a>
+                    <a href="public/listar_animais.php?id=<?php echo $clientes['id']; ?>">Listar Animais</a>
+                </td>
+            </tr>
+
+    <?php } ?>
+
+</body>
+</html>
