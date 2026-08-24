@@ -32,6 +32,7 @@ $clientes = $conn->query($sql);
             <button type="submit">Cadastrar</button>
         </form>
 
+        <a href="public/listar_clientes.php">Visualizar Clientes</a>
         <a href="public/listar_animais.php">Visualizar Animais</a>
 
     </div>
