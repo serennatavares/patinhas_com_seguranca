@@ -4,9 +4,9 @@ include("../infra/conexao.php");
 
 $id = $_GET['id'];
 
-$sql = "DELETE FROM clientes WHERE id = ?";
+$sql = "DELETE FROM animais WHERE id= ?";
 
-$stmt = $conn->prepare($sql);
+$stmt= $conn->prepare($sql);
 $stmt->bind_param("i", $id);
 $stmt->execute();
 

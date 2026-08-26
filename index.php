@@ -32,8 +32,11 @@ $clientes = $conn->query($sql);
             <button type="submit">Cadastrar</button>
         </form>
 
-        <a href="public/listar_clientes.php">Visualizar Clientes</a>
+        <br>
+        <a href="public/listar_clientes.php">Visualizar Clientes</a> 
+        <br>
         <a href="public/listar_animais.php">Visualizar Animais</a>
+        <br><br>
 
     </div>
 
@@ -53,8 +56,9 @@ $clientes = $conn->query($sql);
                 <td><?php echo $cliente['email']; ?></td>
 
                 <td>
-                    <a href="public/cadastrar_animais.php?id=<?php echo $cliente['id']; ?>">Cadastrar Animal</a>
-                    <a href="public/listar_animais_usuario.php?id=<?php echo $cliente['id']; ?>">Listar Animais do Usuário</a>
+                    <a href="public/editar_clientes.php?id=<?php echo $cliente['id']; ?>">Editar</a>
+                    <a href="public/formulario_animais.php?id=<?php echo $cliente['id']; ?>">Cadastrar Animal</a>
+                    <a href="public/listar_animais_usuario.php?id=<?php echo $cliente['id']; ?>">Animais do Usuário</a>
                 </td>
 
             </tr>

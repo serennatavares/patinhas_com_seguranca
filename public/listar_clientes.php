@@ -19,13 +19,17 @@ while ($cliente = $clientes->fetch_assoc()) {
 
     <table>
         <tr>
-            <td><?php echo $cliente['id']; ?></td>
-            <td><?php echo $cliente['nome']; ?></td>
-            <td><?php echo $cliente['email']; ?></td>
+            <td>ID: <?php echo $cliente['id']; ?> |</td>
+            <td>Nome: <?php echo $cliente['nome']; ?> |</td>
+            <td>E-mail: <?php echo $cliente['email']; ?> |</td>
+            <td><a href="excluir_clientes.php?id=<?php echo $cliente["id"]; ?>">Excluir</a>
+</td>
         </tr>
     </table>
 
 <?php } ?>
+
+<a href="../index.php"><button type="button">Voltar</button></a>
 
 </body>
 </html>
